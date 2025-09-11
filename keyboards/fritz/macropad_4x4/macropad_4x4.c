@@ -3,9 +3,9 @@
 #ifdef RGB_MATRIX_ENABLE
 led_config_t g_led_config = { {
     // Key Matrix to LED Index
-    { 3, 2, 1, 0 },
-    { 7, 6, 5, 4 },
-    { 11, 10, 9, 8 },
+    { 0,  1,  2,  3  },
+    { 7,  6,  5,  4  },
+    { 8,  9,  10, 11 },
     { 15, 14, 13, 12 }
 }, {
     // LED Index to Physical Position
@@ -15,9 +15,9 @@ led_config_t g_led_config = { {
     { 28, 60 }, { 84, 60 }, { 140, 60 }, { 196, 60 }
 }, {
     // LED Index to Flag
-    4, 4, 4, 4,
-    4, 4, 4, 4,
-    4, 4, 4, 4,
-    4, 4, 4, 4
+    LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT
 } };
 #endif
