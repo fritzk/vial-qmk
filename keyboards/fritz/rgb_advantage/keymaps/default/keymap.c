@@ -44,6 +44,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record){
+    // On boot the oled quickly displays an image and then goes dark.
+    // That is with the render_logo() in the oled_task_user(). If oled_clear()
+    // is sent the screen will redraw. This doesn't seem normal. My
+    // expectation was that it would come on, but then go to sleep at some
+    // point in the future.
+    // Quite possible that there is some other configuration needed.
+    // Until there are other animations just leave this here to check
+    // that the oled is working by pressing tab.
+    if (KC_TAB == keycode) {
+        oled_clear();
+    }
+    return true;
+}
+
 #ifdef OLED_ENABLE
 static void render_logo(void) {
     static const char PROGMEM qmk_logo[] = {
