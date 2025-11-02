@@ -2,10 +2,11 @@
 
 #pragma once
 
-#define VIAL_KEYBOARD_UID {0x58, 0x55, 0xE7, 0x22, 0xE7, 0x2F, 0xD2, 0x9A}
+#define VIAL_KEYBOARD_UID {0x8C, 0x1B, 0x6E, 0x93, 0x5D, 0x7A, 0xF2, 0x04}
 
-#define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
-#define VIAL_UNLOCK_COMBO_COLS { 0, 3 }
+// left arrow + right arrow
+#define VIAL_UNLOCK_COMBO_ROWS { 5,  4 }
+#define VIAL_UNLOCK_COMBO_COLS { 5,  5 }
 
 #define RGBLIGHT_LIMIT_VAL 64 
 #define RGB_MATRIX_LED_COUNT 56
@@ -65,3 +66,6 @@
 #define I2C_DRIVER I2CD0
 #define I2C1_SCL_PIN GP29
 #define I2C1_SDA_PIN GP28
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
