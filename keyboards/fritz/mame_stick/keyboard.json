@@ -20,7 +20,8 @@
         "vid": "0xFEED"
     },
     "development_board": "bluepill",
-    "debounce": 1,
+    "debounce": 10,
+    "debounce_type": "asym_eager_defer_pk",
     "layouts": {
         "LAYOUT": {
             "layout": [
