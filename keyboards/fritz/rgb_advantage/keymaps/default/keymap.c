@@ -38,8 +38,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,                                                                      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
               KC_GRV,   KC_INS,   KC_LEFT,  KC_RGHT,                                                                                       KC_UP,    KC_DOWN,  KC_LBRC,  KC_RBRC,
                                                       KC_LCTL,  KC_LALT,                                               KC_RGUI,  KC_RCTL,
-                                                                KC_HOME,                                   /*KC_PGUP,*/RGB_MOD,
-                                            KC_BSPC,  KC_DEL,   QK_BOOT, /*KC_END,*/                       /*KC_PGDN,*/RGB_TOG, KC_ENTER, KC_SPC
+                                                                KC_HOME,                                               KC_PGUP,
+                                            KC_BSPC,  KC_DEL,   KC_END,                                                KC_PGDN, KC_ENTER, KC_SPC
   )
 };
 
