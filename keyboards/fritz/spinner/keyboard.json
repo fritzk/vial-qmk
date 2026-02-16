@@ -1,0 +1,31 @@
+{
+    "manufacturer": "fritz",
+    "keyboard_name": "fritz/spinner",
+    "maintainer": "fritz",
+    "features": {
+        "bootmagic": false,
+        "command": false,
+        "console": false,
+        "extrakey": false,
+        "nkro": false
+    },
+    "matrix_pins": {
+        "direct": [
+            [ "B10" ]
+        ]
+    },
+    "usb": {
+        "device_version": "0.0.1",
+        "pid": "0xA5F1",
+        "vid": "0xFEED"
+    },
+    "development_board": "bluepill",
+    "debounce": 5,
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0}
+            ]
+        }
+    }
+}
