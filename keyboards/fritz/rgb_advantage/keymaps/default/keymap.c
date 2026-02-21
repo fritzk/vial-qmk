@@ -11,13 +11,6 @@ enum layer_names {
   _NUMBERS
 };
 
-enum custom_keycodes {
-  ALT_TAB_HOLD = SAFE_RANGE,
-  CTL_TAB_HOLD,
-};
-// clang-format on
-
-// clang-format off
 /****************************************************************************************************
 *
 * Keymap: Default Layer in Qwerty
@@ -46,7 +39,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
-    KC_ESC,   ALT_TAB_HOLD,    CTL_TAB_HOLD,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SCRL,  RM_TOGG, KC_NUM_LOCK, QK_BOOT,
+    KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SCRL,  RM_TOGG, KC_NUM_LOCK, QK_BOOT,
     KC_EQL,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                                                                      KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,
     KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,                                                                      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSLS,
     KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                                                                      KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
@@ -91,65 +84,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 // clang-format on
-
-bool is_alt_tab_mode = false;
-bool is_ctl_tab_mode = false;
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-            // Window switching is handled by holding Alt and using Tab or Shift Tab
-            // to change windows. ALT_TAB_HOLD changes this to holding a key, then using
-            // H and L to move between windows.
-        case ALT_TAB_HOLD:
-            if (record->event.pressed) {
-                if (!is_alt_tab_mode) {
-                    is_alt_tab_mode = true;
-                    register_code(KC_LALT);
-                }
-            } else {
-                if (is_alt_tab_mode) {
-                    unregister_code(KC_LALT);
-                    is_alt_tab_mode = false;
-                }
-            }
-            return false;
-
-        case CTL_TAB_HOLD:
-            if (record->event.pressed) {
-                if (!is_ctl_tab_mode) {
-                    is_ctl_tab_mode = true;
-                    register_code(KC_LCTL);
-                }
-            } else {
-                if (is_ctl_tab_mode) {
-                    unregister_code(KC_LCTL);
-                    is_ctl_tab_mode = false;
-                }
-            }
-            return false;
-
-        case KC_L:
-            if (is_alt_tab_mode || is_ctl_tab_mode) {
-                if (record->event.pressed) {
-                    tap_code(KC_TAB);
-                }
-                return false;
-            }
-            break;
-
-        case KC_H:
-            if (is_alt_tab_mode || is_ctl_tab_mode) {
-                if (record->event.pressed) {
-                    register_code(KC_LSFT);
-                    tap_code(KC_TAB);
-                    unregister_code(KC_LSFT);
-                }
-                return false;
-            }
-            break;
-    }
-    return true;
-}
 
 #ifdef OLED_ENABLE
 static void render_logo(void) {
