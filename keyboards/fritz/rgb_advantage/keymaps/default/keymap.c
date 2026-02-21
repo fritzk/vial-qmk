@@ -55,15 +55,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_BSPC,  KC_DEL,   KC_END,                                                KC_PGDN,  KC_ENTER, KC_SPC
   ),
   [_MOUSE] = LAYOUT(
-    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_PSCR,  KC_SCRL,  KC_PAUS,  TO(_QWERTY),    QK_BOOT,
-    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,                                                                   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,                                                                   KC_TRNS,  KC_ACL0,  KC_ACL1,  KC_ACL2,  KC_TRNS,  KC_TRNS,
-    KC_TRNS,  KC_TRNS,  MS_BTN1,  MS_BTN3,  MS_BTN2,  KC_TRNS,                                                                   MS_LEFT,  MS_DOWN,  MS_UP,    MS_RGHT,  KC_TRNS,  KC_TRNS,
-    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,                                                                   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-              KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,                                                                                       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-                                                      KC_TRNS,  KC_TRNS,                                               KC_TRNS,  KC_TRNS,
-                                                                KC_TRNS,                                               KC_TRNS,
-                                            KC_TRNS,  KC_TRNS,  KC_TRNS,                                               KC_TRNS,  KC_TRNS,  KC_TRNS
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,       _______,  _______,  _______,  _______,  _______,  _______,  _______,  TO(_QWERTY),    QK_BOOT,
+    _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  KC_ACL0,  KC_ACL1,  KC_ACL2,  _______,  _______,
+    _______,  _______,  MS_BTN1,  MS_BTN3,  MS_BTN2,  _______,                                                                   MS_LEFT,  MS_DOWN,  MS_UP,    MS_RGHT,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
+              _______,  _______,  _______,  _______,                                                                                       _______,  _______,  _______,  _______,
+                                                      _______,  _______,                                               _______,  _______,
+                                                                _______,                                               _______,
+                                            _______,  _______,  _______,                                               _______,  _______,  _______
   )
 };
 // clang-format on
