@@ -85,6 +85,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Standard QMK: Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+        case KC_MINS:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Standard QMK: Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+            return true;
+
+        // Custom Override: Allow Tap Dance, Mod-Tap, and Layer-Tap keycodes
+        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+        case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+            add_weak_mods(MOD_BIT(KC_LSFT));
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
+}
+
 #ifdef OLED_ENABLE
 static void render_logo(void) {
     // clang-format off
