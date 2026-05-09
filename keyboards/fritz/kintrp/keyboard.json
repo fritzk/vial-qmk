@@ -1,6 +1,7 @@
 {
-    "manufacturer": "https://github.com/stapelberg",
-    "keyboard_name": "kinT (kint41)",
+    "manufacturer": "fritz",
+    "keyboard_name": "kinrp",
+    "maintainer": "fritz",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
     "features": {
@@ -16,10 +17,9 @@
     "processor": "RP2040",
     "url": "",
     "usb": {
-        "vid": "0x1209",
-        "pid": "0x345C",
-        "device_version": "0.0.1",
-        "max_power": 100
+        "device_version": "1.0.0",
+        "pid": "0x0000",
+        "vid": "0xFEED"
     },
     "build": {
         "debounce_type": "sym_eager_pk"
